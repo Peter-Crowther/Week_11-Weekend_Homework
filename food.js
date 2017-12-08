@@ -3,4 +3,13 @@ const Food = function(name, replenishment_value){
   this.replenishment_value = replenishment_value;
 }
 
+
+
+
+
+
+
+
+
+
 module.exports = Food;

@@ -5,9 +5,9 @@ const Task = function(difficulty, urgency, reward) {
   this.taskStatus = false;
 }
 
-// Task.prototype.markTaskComplete = function(taskStatus) {
-//
-// }
+Task.prototype.changeTaskStatus = function() {
+  this.taskStatus = !this.taskStatus;
+}
 
 
 

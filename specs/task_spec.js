@@ -15,8 +15,9 @@ const assert = require("assert");
       assert.strictEqual(task.taskStatus, false);
     });
 
-    // it("should be able to mark a task as complete", function() {
-    //   assert.strictEqual(task.markTaskComplete(), true);
-    // });
+    it("should be able to mark a task as complete", function() {
+      task.changeTaskStatus();
+      assert.strictEqual(task.taskStatus, true);
+    });
 
   });
