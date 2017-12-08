@@ -17,6 +17,10 @@ Hero.prototype.eat = function(food){
   }
 }
 
+Hero.prototype.addTask = function(task) {
+  this.hero_tasks.push(task);
+}
+
 
 
 
