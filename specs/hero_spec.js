@@ -5,7 +5,7 @@ describe("Hero", function(){
   var hero;
 
   beforeEach(function() {
-    hero = new Hero("SuperTed", 100, "Lasagne", [])
+    hero = new Hero("SuperTed", 100, "Lasagne")
   });
 
   it("should have a name, health, favourite food and empty tasks", function(){
