@@ -48,6 +48,14 @@ describe("Hero", function(){
     assert.deepStrictEqual(hero.hero_tasks, [task3, task2, task1]);
   });
 
+  it("should be able to sort tasks by urgency", function() {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    hero.sortUrgency();
+    assert.deepStrictEqual(hero.hero_tasks, [task1, task3, task2])
+  });
+
   it("should be able to eat poisoned food", function() {
     rat.touchFood(food);
     hero.eat(food);

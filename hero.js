@@ -27,6 +27,12 @@ Hero.prototype.sortDifficulty = function() {
   });
 }
 
+Hero.prototype.sortUrgency = function() {
+  this.hero_tasks.sort(function (a, b) {
+  return a.urgency - b.urgency
+  });
+}
+
 
 
 
