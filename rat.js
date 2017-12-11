@@ -11,4 +11,4 @@ Rat.prototype.touchFood = function(food){
 
 
 
-module.expots = Rat;
+module.exports = Rat;
