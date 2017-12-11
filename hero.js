@@ -21,12 +21,10 @@ Hero.prototype.addTask = function(task) {
   this.hero_tasks.push(task);
 }
 
-Hero.prototype.sortDifficulty = function(hero_tasks) {
-  result = []
-  for(task of hero_tasks){
-    result.push(task.difficulty)
-  }
-  return result.sort()
+Hero.prototype.sortDifficulty = function() {
+  this.hero_tasks.sort(function (a, b) {
+  return a.difficulty - b.difficulty
+  });
 }
 
 

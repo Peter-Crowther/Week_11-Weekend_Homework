@@ -13,9 +13,9 @@ describe("Hero", function(){
   beforeEach(function() {
     hero = new Hero("SuperTed", 40, "Lasagne");
     food = new Food("Chicken", 40);
-    task1 = new Task("Hard", "Urgent", 20, false);
-    task2 = new Task("Hard", "Non-Urgent", 15, false);
-    task3 = new Task("Easy", "Non-Urgent", 5, false);
+    task1 = new Task(3, "Urgent", 20, false);
+    task2 = new Task(2, "Non-Urgent", 15, false);
+    task3 = new Task(1, "Non-Urgent", 5, false);
   });
 
   it("should have a name, health, favourite food and empty tasks", function(){
@@ -39,12 +39,13 @@ describe("Hero", function(){
     assert.deepStrictEqual(hero.hero_tasks.length, 1);
   });
 
-  // it("should be able to sort tasks by difficulty", function() {
-  //   hero.addTask(task1);
-  //   hero.addTask(task2);
-  //   hero.addTask(task3);
-  //   assert.deepStrictEqual(hero.sortDifficulty(), ["Easy", "Hard", "Hard"]);
-  // });
+  it("should be able to sort tasks by difficulty", function() {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    hero.sortDifficulty();
+    assert.deepStrictEqual(hero.hero_tasks, [task3, task2, task1]);
+  });
 
   // it("should be able to eat poisoned food", function() {
   //   rat.touchFood(food);
