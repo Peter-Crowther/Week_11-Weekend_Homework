@@ -33,6 +33,12 @@ Hero.prototype.sortUrgency = function() {
   });
 }
 
+Hero.prototype.sortReward = function() {
+  this.hero_tasks.sort(function (a, b) {
+  return a.reward - b.reward
+  });
+}
+
 
 
 

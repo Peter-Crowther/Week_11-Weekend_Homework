@@ -5,16 +5,13 @@ const Rat = require("../rat.js")
 const assert = require("assert");
 
 describe("Hero", function(){
-  var hero;
-  var food;
-  var task;
-  var rat;
+
 
   beforeEach(function() {
     hero = new Hero("SuperTed", 40, "Lasagne");
     food = new Food("Chicken", 40);
     rat = new Rat("Ratty");
-    task1 = new Task(3, 1, 20, false);
+    task1 = new Task(3, 1, 12, false);
     task2 = new Task(2, 3, 15, false);
     task3 = new Task(1, 2, 5, false);
   });
@@ -54,6 +51,14 @@ describe("Hero", function(){
     hero.addTask(task3);
     hero.sortUrgency();
     assert.deepStrictEqual(hero.hero_tasks, [task1, task3, task2])
+  });
+
+  it("should be able to sort tasks by reward", function() {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    hero.sortReward();
+    assert.deepStrictEqual(hero.hero_tasks, [task3, task1, task2])
   });
 
   it("should be able to eat poisoned food", function() {
